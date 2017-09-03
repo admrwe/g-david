@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: blue;
+/*     animation: bg-color-fade-1 30s linear infinite alternate; */
+}
+
+main {
+  z-index: 666;
+  min-width: 320px;
+  max-width: 880px;
+  padding: 32px;
+  margin: 0 auto;
+}
+
+
+/*--- Tabs ---*/
+
+div.tab {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 20px;
+  font-weight: 200;
+  font-smooth: never;
+  -webkit-font-smoothing : none;
+  background-color: transparent;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  border: 1px solid transparent;
+}
+
+div.tab button:hover {
+    border: 1px solid #fff;
+}
+
+div.tab button.active {
+    border: 1px solid #fff;
+}
+
+.tabcontent {
+  display: none;
+  text-align: center;
+  margin-top: 32px;
+  padding: 16px;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 28px;
+  font-weight: 200;
+  font-smooth: never;
+  -webkit-font-smoothing : none;
+  background-color: transparent;
+  color: white;
+}
+
+.release-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.release-grid>li {
+  margin: 8px;
+}
+
+.release-image {
+  width: 200px;
+  height: 200px;
+}
+
+
+/*--- Icons ---*/
+
+#envelope {
+  fill: none;
+  stroke: white;
+  stroke-weight: 1;
+  transform: scale(.8);
+}
+
+
+/*--- Shapes ---*/
+
+.background {
+  z-index: -1;
+  position:fixed !important;
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+}
+
+.enlarger {
+  width: 3000px;
+  transform-origin: 50% 50%;
+  animation: enlarge 20s ease-in-out alternate infinite;
+}
+
+.spotlight {
+  position: absolute;
+  z-index: -2;
+  fill: white;
+  width: 2000px;
+  height: 2000px;
+}
+
+.shapes {
+  z-index: 2;
+  fill: none;
+  animation: random-position 6s ease-in-out infinite alternate;
+  stroke: red;
+  stroke-weight: 3px;
+}
+
+.shape-1 {
+  left: 500px;
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  animation: spin 16s linear infinite;
+}
+
+.shape-2 {
+  left: 800px;
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  animation: spin 5s linear infinite;
+}
+
+.shape-3 {
+  left: 30px;
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  animation: spin 12s linear infinite;
+}
+
+.shape-4 {
+  left: 500px;
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  animation: spin 8s linear infinite reverse;
+}
+
+.shape-5 {
+  left: 1000px;
+  position: absolute;
+  width: 900px;
+  height: 900px;
+  animation: spin 14s linear infinite reverse;
+}
+
+.shape-6 {
+  left: 800px;
+  top: 0px;
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  animation: spin 9s linear infinite;
+}
+
+
+/*--- Animations ---*/
+
+@keyframes bg-color-fade-1 {
+  0% {background-color: red;}
+  33% {background-color: yellow;}
+  66% {background-color: blue;}
+}
+
+@keyframes font-color-fade-1 {
+  0% {color: blue;}
+  33% {color: yellow;}
+  66% {color: red;}
+}
+
+@keyframes spin {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
+@keyframes random-position {
+  0% {transform: translateX(0%);}
+  100% {transform: translateX(10%);}
+}
+
+@keyframes enlarge {
+  0% {transform: scale(1,1);}
+  100% {transform: scale(3,3);}
+}
+
+@keyframes bounce {
+  0% {left: 0px;}
+  50% {left: 1000px;}
+  100% {left: 0px;}
+}
+
+@keyframes spin-color {
+  0% {
+    transform: rotate(0deg);
+    stroke: yellow;
+  }
+  33% {stroke: blue;}
+  66% {stroke: red;}
+  100% {
+    transform: rotate(360deg);
+    stroke: yellow;
+  }
+}
+
+@keyframes spin-bounce {
+  0% {
+    transform: rotate(0deg);
+    stroke: yellow;
+    left: 0px;
+  }
+  33% {stroke: blue;}
+  50% {left: 200px;}
+  66% {stroke: red;}
+  100% {
+    transform: rotate(360deg);
+    stroke: yellow;
+    left: 0px;
+  }
+}
